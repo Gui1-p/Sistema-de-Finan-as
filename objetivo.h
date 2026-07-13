@@ -8,12 +8,14 @@ class Objetivo
 private:
     string m_Nome;
     Data m_DataLimite;
-    string M_Detalhes;
+    string m_Detalhes;
+    double m_ValorAlvo;
+    double m_ValorAtual;
 
 
 
 public:
-    Objetivo();
+    Objetivo(string Nome, Data DataLimite, string Detalhes, double ValorAlvo, double ValorAtual);
 };
 
 #endif // OBJETIVO_H

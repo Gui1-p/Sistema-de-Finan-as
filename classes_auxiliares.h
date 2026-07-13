@@ -13,6 +13,7 @@ private:
     size_t m_Ano;
 
 public:
+    Data();
     Data(size_t Dia, size_t Mes, size_t Ano);
 
     size_t GetDia() const;

@@ -23,9 +23,12 @@ private:
 
 public:
     Pessoa(string Nome, Data Nascimento);
+    ~Pessoa();
 
     string GetNome() const;
     Data GetNascimento() const;
+
+    void AdicionarFundo(Fundos *Fundo);
 
 };
 

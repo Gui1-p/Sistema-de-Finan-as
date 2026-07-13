@@ -11,10 +11,11 @@ protected:
     string m_Nome;
     Data m_Abertura;
     double m_ValorAplicado;
+    size_t m_Id;
 
 public:
-    Fundos(string Nome, Data Abertura, double ValorAplicado);
-    virtual ~Fundos();
+    Fundos(string Nome, Data Abertura, double ValorAplicado, size_t Id);
+    virtual ~Fundos() = default;
 
 };
 
@@ -27,7 +28,7 @@ protected:
     float m_Rentabilidade;
 
 public:
-    Poupanca(string Nome, Data Abertura, double ValorAplicado, float Rentabilidade);
+    Poupanca(string Nome, Data Abertura, double ValorAplicado, float Rentabilidade, size_t Id);
 };
 
 
@@ -39,7 +40,7 @@ private:
     Data m_Termino;
 
 public:
-    Investimento(string Nome, Data Abertura, double ValorAplicado, float Rentabilidade, Data Termino);
+    Investimento(string Nome, Data Abertura, double ValorAplicado, float Rentabilidade, Data Termino, size_t Id);
 
 };
 
@@ -53,7 +54,7 @@ private:
     Data m_Fatura;
 
 public:
-    CartaoCredito(string Nome, Data Abertura, double ValorAplicado, Data Fechamento, Data Fatura);
+    CartaoCredito(string Nome, Data Abertura, double ValorAplicado, Data Fechamento, Data Fatura, size_t Id);
 
 
 };
