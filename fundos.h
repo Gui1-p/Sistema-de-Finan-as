@@ -17,6 +17,14 @@ public:
     Fundos(string Nome, Data Abertura, double ValorAplicado, size_t Id);
     virtual ~Fundos() = default;
 
+    string GetNome();
+    Data GetAbertura();
+    double GetValorAplicado();
+    size_t GetId();
+
+    void SetNome(string Nome);
+    void SetAbertura(Data Abertura);
+    void SetValorAplicado(double ValorAplicado);
 };
 
 
@@ -29,6 +37,10 @@ protected:
 
 public:
     Poupanca(string Nome, Data Abertura, double ValorAplicado, float Rentabilidade, size_t Id);
+
+    float GetRentabilidade();
+
+    void SetRentabilidade(float Rentabilidade);
 };
 
 
@@ -42,6 +54,8 @@ private:
 public:
     Investimento(string Nome, Data Abertura, double ValorAplicado, float Rentabilidade, Data Termino, size_t Id);
 
+    Data GetTermino();
+    void SetTermino(Data Termino);
 };
 
 
@@ -51,10 +65,20 @@ class CartaoCredito : public Fundos
 {
 private:
     Data m_Fechamento;
-    Data m_Fatura;
+    Data m_Vencimento;
+    double m_Limite;
 
 public:
-    CartaoCredito(string Nome, Data Abertura, double ValorAplicado, Data Fechamento, Data Fatura, size_t Id);
+    CartaoCredito(string Nome, Data Abertura, double ValorAplicado, Data Fechamento, Data Vencimento, size_t Id, double Limite);
+
+    Data GetFechamento();
+    Data GetVencimento();
+    double GetLimite();
+
+    double Fatura();
+
+    void SetLimite(double Limite);
+
 
 
 };

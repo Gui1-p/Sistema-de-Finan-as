@@ -6,14 +6,14 @@ Transacao::Transacao(string Nome, string Detalhes, string Categoria, Data Data, 
 
 //Gets
 
-string Transacao::GetNome() const {return m_Nome;}
-string Transacao::GetDetalhes() const {return m_Detalhes;}
-string Transacao::GetCategoria()const {return m_Categoria;}
-Data Transacao::GetData() const {return m_Data;}
-TipoTransacao Transacao::GetTipoTransacao() const {return m_Tipo;}
-FormaPagamento Transacao::GetFormaPagamento() const {return m_FormaPagamento;}
-float Transacao::GetValor() const {return m_Valor;}
-size_t Transacao::GetFundId() const {return m_FundId;};
+string Transacao::GetNome() {return m_Nome;}
+string Transacao::GetDetalhes() {return m_Detalhes;}
+string Transacao::GetCategoria() {return m_Categoria;}
+Data Transacao::GetData()  {return m_Data;}
+TipoTransacao Transacao::GetTipoTransacao() {return m_Tipo;}
+FormaPagamento Transacao::GetFormaPagamento() {return m_FormaPagamento;}
+float Transacao::GetValor() {return m_Valor;}
+size_t Transacao::GetFundId() {return m_FundId;};
 
 //Sets
 

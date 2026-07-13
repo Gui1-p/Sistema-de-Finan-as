@@ -20,14 +20,14 @@ private:
 public:
     Transacao(string Nome, string Detalhes, string Categoria, Data Data, TipoTransacao Tipo, FormaPagamento FormaPagamento, float Valor, size_t FundId);
 
-    string GetNome() const;
-    string GetDetalhes() const;
-    string GetCategoria() const;
-    Data GetData() const;
-    TipoTransacao GetTipoTransacao() const;
-    FormaPagamento GetFormaPagamento() const;
-    float GetValor() const;
-    size_t GetFundId() const;
+    string GetNome();
+    string GetDetalhes();
+    string GetCategoria();
+    Data GetData();
+    TipoTransacao GetTipoTransacao();
+    FormaPagamento GetFormaPagamento();
+    float GetValor();
+    size_t GetFundId();
 
 
     void SetNome(string Nome);

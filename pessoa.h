@@ -25,8 +25,8 @@ public:
     Pessoa(string Nome, Data Nascimento);
     ~Pessoa();
 
-    string GetNome() const;
-    Data GetNascimento() const;
+    string GetNome();
+    Data GetNascimento();
 
     void AdicionarFundo(Fundos *Fundo);
 

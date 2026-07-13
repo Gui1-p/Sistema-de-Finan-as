@@ -16,6 +16,18 @@ private:
 
 public:
     Objetivo(string Nome, Data DataLimite, string Detalhes, double ValorAlvo, double ValorAtual);
+
+    string GetNome();
+    Data GetDataLimite();
+    string GetDetalhes();
+    double GetValorAlvo();
+    double GetValorAtual();
+
+    void SetNome(string Nome);
+    void SetDataLimite(Data DataLimite);
+    void SetDetalhes(string Detalhes);
+    void SetValorAlvo(double ValorAlvo);
+    void SetValorAtual(double ValorAtual);
 };
 
 #endif // OBJETIVO_H

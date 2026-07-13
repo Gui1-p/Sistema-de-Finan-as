@@ -8,8 +8,8 @@ Pessoa::~Pessoa()
         delete f;
 }
 
-string Pessoa::GetNome() const {return m_Nome;}
-Data Pessoa::GetNascimento() const {return m_Data_nascimento;}
+string Pessoa::GetNome() {return m_Nome;}
+Data Pessoa::GetNascimento() {return m_Data_nascimento;}
 
 void Pessoa::AdicionarFundo(Fundos *Fundo){
     m_Fundos.push_back(Fundo);

@@ -16,9 +16,9 @@ public:
     Data();
     Data(size_t Dia, size_t Mes, size_t Ano);
 
-    size_t GetDia() const;
-    size_t GetMes() const;
-    size_t GetAno() const;
+    size_t GetDia();
+    size_t GetMes();
+    size_t GetAno();
 
     void SetDia(size_t Dia);
     void SetAno(size_t Mes);
