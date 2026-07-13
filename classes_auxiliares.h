@@ -18,17 +18,11 @@ public:
     size_t GetDia() const;
     size_t GetMes() const;
     size_t GetAno() const;
+
+    void SetDia(size_t Dia);
+    void SetAno(size_t Mes);
+    void SetMes(size_t Ano);
 };
 
-class FormaPagamento //cartão, pix, debito, dinheiro, qual conta
-{
-private:
-
-
-
-public:
-
-
-};
 
 #endif // CLASSES_AUXILIARES_H
