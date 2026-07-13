@@ -20,6 +20,8 @@ private:
     vector<Transacao> m_Transacoes;
     vector<Objetivo> m_Objetivos;
 
+    size_t m_ProximoId = 1; //forma de organizar os fundos
+
 
 public:
     Pessoa(string Nome, Data Nascimento);
@@ -29,6 +31,22 @@ public:
     Data GetNascimento();
 
     void AdicionarFundo(Fundos *Fundo);
+
+    size_t GerarId();
+
+    void AdicionarTransacao(Transacao Transacao);
+    void AdicionarObjetivo(Objetivo Objetivo);
+
+    vector<Fundos*>& GetFundos();
+    vector<Transacao>& GetTransacoes();
+    vector<Objetivo>& GetObjetivos();
+
+    Fundos* BuscarFundo(size_t Id);
+
+    double SaldoTotal();
+    double Entradas(size_t Mes, size_t Ano);
+    double Saidas(size_t Mes, size_t Ano);
+
 
 };
 

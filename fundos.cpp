@@ -15,6 +15,19 @@ void Fundos::SetAbertura(Data Abertura) {m_Abertura = Abertura; }
 void Fundos::SetValorAplicado(double ValorAplicado) {m_ValorAplicado = ValorAplicado; }
 
 
+double Fundos::Saldo(vector<Transacao>& Transacoes)
+{
+    double total = m_ValorAplicado;
+    for (Transacao& t : Transacoes) {
+        if (t.GetFundId() != m_Id) continue;        //
+        if (t.GetTipoTransacao() == TipoTransacao::Entrada)
+            total += t.GetValor();
+        else
+            total -= t.GetValor();
+    }
+    return total;
+}
+
 
 //cpnstrutor
 Poupanca::Poupanca(string Nome, Data Abertura, double ValorAplicado, float Rentabilidade, size_t Id) :

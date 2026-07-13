@@ -2,7 +2,8 @@
 #define FUNDOS_H
 
 #include "classes_auxiliares.h"
-
+#include "transacao.h"
+#include <vector>
 
 //////////////////FUNDOS/////////////////////////
 class Fundos
@@ -25,6 +26,8 @@ public:
     void SetNome(string Nome);
     void SetAbertura(Data Abertura);
     void SetValorAplicado(double ValorAplicado);
+
+    double Saldo(vector<Transacao>& Transacoes);
 };
 
 
