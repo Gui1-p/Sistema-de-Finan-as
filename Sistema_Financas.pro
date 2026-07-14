@@ -8,6 +8,9 @@ CONFIG += c++17
 
 SOURCES += \
     classes_auxiliares.cpp \
+    dialogfundos.cpp \
+    dialogobjetivo.cpp \
+    dialogtransacao.cpp \
     fundos.cpp \
     main.cpp \
     mainwindow.cpp \
@@ -17,6 +20,9 @@ SOURCES += \
 
 HEADERS += \
     classes_auxiliares.h \
+    dialogfundos.h \
+    dialogobjetivo.h \
+    dialogtransacao.h \
     fundos.h \
     mainwindow.h \
     objetivo.h \
@@ -24,6 +30,9 @@ HEADERS += \
     transacao.h
 
 FORMS += \
+    dialogfundos.ui \
+    dialogobjetivo.ui \
+    dialogtransacao.ui \
     mainwindow.ui
 
 # Default rules for deployment.

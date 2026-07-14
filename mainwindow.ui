@@ -55,13 +55,6 @@
          </property>
         </widget>
        </item>
-       <item>
-        <widget class="QPushButton" name="pushButton_5">
-         <property name="text">
-          <string>Adicionar Dispositivo externo</string>
-         </property>
-        </widget>
-       </item>
       </layout>
      </widget>
     </item>
@@ -93,7 +86,7 @@ QLabel{
          <property name="frameShadow">
           <enum>QFrame::Shadow::Raised</enum>
          </property>
-         <layout class="QVBoxLayout" name="verticalLayout_2">
+         <layout class="QVBoxLayout" name="verticalLayout_2" stretch="1,5">
           <item>
            <widget class="QLabel" name="label_6">
             <property name="styleSheet">
@@ -102,6 +95,13 @@ QLabel{
             </property>
             <property name="text">
              <string>Saídas</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="Saidas">
+            <property name="text">
+             <string>TextLabel</string>
             </property>
            </widget>
           </item>
@@ -125,7 +125,7 @@ QLabel{
          <property name="frameShadow">
           <enum>QFrame::Shadow::Raised</enum>
          </property>
-         <layout class="QVBoxLayout" name="verticalLayout_4">
+         <layout class="QVBoxLayout" name="verticalLayout_4" stretch="1,5">
           <item>
            <widget class="QLabel" name="label_2">
             <property name="styleSheet">
@@ -138,7 +138,7 @@ QLabel{
            </widget>
           </item>
           <item>
-           <widget class="QLabel" name="label_4">
+           <widget class="QLabel" name="SaldoTotal">
             <property name="styleSheet">
              <string notr="true">font: 20px;
 </string>
@@ -197,7 +197,7 @@ QLabel{
         <widget class="QWidget" name="widget_header" native="true">
          <layout class="QVBoxLayout" name="verticalLayout" stretch="4,1">
           <item>
-           <widget class="QLabel" name="label">
+           <widget class="QLabel" name="Nome">
             <property name="styleSheet">
              <string notr="true">background: none;
 font: 22px;</string>
@@ -249,7 +249,7 @@ font: 12px;
          <property name="frameShadow">
           <enum>QFrame::Shadow::Raised</enum>
          </property>
-         <layout class="QVBoxLayout" name="verticalLayout_3">
+         <layout class="QVBoxLayout" name="verticalLayout_3" stretch="1,5">
           <item>
            <widget class="QLabel" name="label_5">
             <property name="styleSheet">
@@ -258,6 +258,13 @@ font: 12px;
             </property>
             <property name="text">
              <string>Entradas</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="Entradas">
+            <property name="text">
+             <string>TextLabel</string>
             </property>
            </widget>
           </item>

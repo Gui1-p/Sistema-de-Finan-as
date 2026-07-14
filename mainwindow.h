@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include "pessoa.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -19,5 +20,9 @@ public:
 
 private:
     Ui::MainWindow *ui;
+    Pessoa * m_Pessoa;
+
+    void CarregarDadosExemplo();
+    void AtualizarDashboard();
 };
 #endif // MAINWINDOW_H
