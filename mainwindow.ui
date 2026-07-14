@@ -155,6 +155,12 @@ QLabel{
        </item>
        <item row="2" column="4" rowspan="2">
         <widget class="QFrame" name="frame_11">
+         <property name="styleSheet">
+          <string notr="true">QLabel{
+	color: rgb(213, 206, 241);
+	font: 12pt &quot;&quot;Plus Jakarta Sans&quot;, system-ui, sans-serif;&quot;;
+}</string>
+         </property>
          <property name="frameShape">
           <enum>QFrame::Shape::StyledPanel</enum>
          </property>
@@ -231,10 +237,25 @@ border-radius: 8px;
            </widget>
           </item>
           <item>
-           <widget class="QLabel" name="Vencimento">
-            <property name="text">
-             <string>TextLabel</string>
+           <widget class="QWidget" name="widget_5" native="true">
+            <property name="styleSheet">
+             <string notr="true">background-color: rgb(22, 19, 31);
+border-width: 2px;
+border-radius: 8px;
+</string>
             </property>
+            <layout class="QVBoxLayout" name="verticalLayout_13">
+             <item>
+              <widget class="QLabel" name="Vencimento">
+               <property name="styleSheet">
+                <string notr="true"/>
+               </property>
+               <property name="text">
+                <string>TextLabel</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
            </widget>
           </item>
          </layout>

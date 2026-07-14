@@ -24,7 +24,7 @@
    <property name="geometry">
     <rect>
      <x>70</x>
-     <y>430</y>
+     <y>450</y>
      <width>281</width>
      <height>61</height>
     </rect>
@@ -71,7 +71,7 @@
    <property name="geometry">
     <rect>
      <x>60</x>
-     <y>10</y>
+     <y>0</y>
      <width>301</width>
      <height>61</height>
     </rect>
@@ -99,9 +99,9 @@
    <property name="geometry">
     <rect>
      <x>70</x>
-     <y>110</y>
-     <width>281</width>
-     <height>50</height>
+     <y>90</y>
+     <width>280</width>
+     <height>44</height>
     </rect>
    </property>
    <property name="frameShape">
@@ -110,7 +110,17 @@
    <property name="frameShadow">
     <enum>QFrame::Shadow::Raised</enum>
    </property>
-   <layout class="QVBoxLayout" name="verticalLayout_10">
+   <layout class="QHBoxLayout" name="horizontalLayout" stretch="1,4">
+    <item>
+     <widget class="QLabel" name="label_2">
+      <property name="styleSheet">
+       <string notr="true">background-color: none;</string>
+      </property>
+      <property name="text">
+       <string>Nome</string>
+      </property>
+     </widget>
+    </item>
     <item>
      <widget class="QLineEdit" name="Nome_2">
       <property name="text">
@@ -124,9 +134,9 @@
    <property name="geometry">
     <rect>
      <x>70</x>
-     <y>170</y>
+     <y>190</y>
      <width>281</width>
-     <height>68</height>
+     <height>70</height>
     </rect>
    </property>
    <property name="frameShape">
@@ -152,7 +162,7 @@
    <property name="geometry">
     <rect>
      <x>70</x>
-     <y>260</y>
+     <y>370</y>
      <width>280</width>
      <height>70</height>
     </rect>
@@ -175,6 +185,107 @@
      <widget class="QDoubleSpinBox" name="ValorAtual_2">
       <property name="maximum">
        <double>10000000000000000000.000000000000000</double>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QFrame" name="frame_7">
+   <property name="geometry">
+    <rect>
+     <x>70</x>
+     <y>140</y>
+     <width>280</width>
+     <height>44</height>
+    </rect>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::Shape::StyledPanel</enum>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Shadow::Raised</enum>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="1,4">
+    <item>
+     <widget class="QLabel" name="label_4">
+      <property name="styleSheet">
+       <string notr="true">background-color: none;</string>
+      </property>
+      <property name="text">
+       <string>Tipo de Fundo</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QComboBox" name="TipoFundo"/>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QFrame" name="frame_8">
+   <property name="geometry">
+    <rect>
+     <x>70</x>
+     <y>320</y>
+     <width>280</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::Shape::StyledPanel</enum>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Shadow::Raised</enum>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout_3">
+    <item>
+     <widget class="QLabel" name="label_7">
+      <property name="styleSheet">
+       <string notr="true">background-color: none;</string>
+      </property>
+      <property name="text">
+       <string>Limite</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QDoubleSpinBox" name="Limite">
+      <property name="maximum">
+       <double>1000000000000.000000000000000</double>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QFrame" name="frame_10">
+   <property name="geometry">
+    <rect>
+     <x>70</x>
+     <y>270</y>
+     <width>280</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::Shape::StyledPanel</enum>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Shadow::Raised</enum>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout_4">
+    <item>
+     <widget class="QLabel" name="label_5">
+      <property name="styleSheet">
+       <string notr="true">background-color: none;</string>
+      </property>
+      <property name="text">
+       <string>Rentabilidade</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QDoubleSpinBox" name="Rentabilidade">
+      <property name="maximum">
+       <double>1000000000000.000000000000000</double>
       </property>
      </widget>
     </item>

@@ -58,6 +58,7 @@ void MainWindow::AtualizarDashboard()
 
     AtualizarMetas();
     AtualizarFundos();
+    AtualizarCartao();
 }
 
 void MainWindow::AoAdicionarTransacao()
@@ -149,14 +150,14 @@ void MainWindow::AtualizarCartao()
     CartaoCredito* cartao = m_Pessoa->AcharCartao();
     if (!cartao) return;                                  // sem cartão cadastrado
 
-    vector<Transacao>& Transacao = m_Pessoa->GetTransacoes();
-    int pct = (int) cartao->PercentualLimiteUsado(Transacao);
+    vector<Transacao>& Movimentacao = m_Pessoa->GetTransacoes();
+    int percentual = (int) cartao->PercentualLimiteUsado(Movimentacao);
 
-    ui->ValorFatura->setText(QString("R$ %1").arg(cartao->Fatura(Transacao), 0, 'f', 2));
+    ui->ValorFatura->setText(QString("R$ %1").arg(cartao->Fatura(Movimentacao), 0, 'f', 2));
     ui->BarraLimite->setRange(0, 100);
-    ui->BarraLimite->setValue(pct);
-    ui->LimiteInfo->setText(QString("Limite usado · %1%").arg(pct));
-    ui->Disponivel->setText(QString("R$ %1 disponível").arg(cartao->LimiteDisponivel(Transacao), 0, 'f', 2));
+    ui->BarraLimite->setValue(percentual);
+    ui->LimiteInfo->setText(QString("Limite usado · %1%").arg(percentual));
+    ui->Disponivel->setText(QString("R$ %1 disponível").arg(cartao->LimiteDisponivel(Movimentacao), 0, 'f', 2));
 
     Data v = cartao->GetVencimento();
     ui->Vencimento->setText(QString("Vence em %1/%2")

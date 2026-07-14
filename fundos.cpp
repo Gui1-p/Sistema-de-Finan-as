@@ -69,7 +69,7 @@ Data CartaoCredito::GetFechamento() {return m_Fechamento; }
 Data CartaoCredito::GetVencimento() {return m_Vencimento; }
 double CartaoCredito::GetLimite() {return m_Limite; }
 
-string CartaoCredito::Tipo(){return "Cartao de credito";}
+string CartaoCredito::Tipo(){return "CartaoCredito";}
 
 double CartaoCredito::Fatura(vector<Transacao>& Transacoes) {return -Saldo(Transacoes);}//isso é para que a fatura não apareça negativa
 
