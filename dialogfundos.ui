@@ -15,9 +15,64 @@
   </property>
   <property name="styleSheet">
    <string notr="true">QFrame {
-    background-color: #12101c;
-    border: 1px solid #2a2438;
-    border-radius: 12px;
+    background-color: transparent;
+    border: none;
+}
+
+QDialog {
+    background-color: rgb(18, 16, 28);
+}
+
+QLabel {
+    color: rgb(160, 155, 180);
+    background-color: transparent;
+    font-weight: 500;
+    padding-bottom: 2px;
+}
+
+QLineEdit, QDoubleSpinBox, QDateEdit, QComboBox, QTextEdit {
+    background-color: rgb(26, 23, 38);
+    color: rgb(230, 226, 240);
+    border: 1px solid rgb(42, 36, 56);
+    border-radius: 6px;
+    padding: 6px 8px;
+    selection-background-color: rgb(168, 85, 247);
+}
+
+QLineEdit:focus, QDoubleSpinBox:focus, QDateEdit:focus,
+QComboBox:focus, QTextEdit:focus {
+    border: 1px solid rgb(168, 85, 247);
+}
+
+QComboBox::drop-down {
+    border: none;
+    width: 20px;
+}
+QComboBox QAbstractItemView {
+    background-color: rgb(26, 23, 38);
+    color: rgb(230, 226, 240);
+    selection-background-color: rgb(124, 58, 237);
+    border: 1px solid rgb(42, 36, 56);
+}
+
+QDialogButtonBox QPushButton {
+    background-color: rgb(26, 23, 38);
+    color: rgb(230, 226, 240);
+    border: none;
+    border-radius: 6px;
+    padding: 8px 20px;
+    min-width: 80px;
+    font-weight: 600;
+}
+QDialogButtonBox QPushButton:hover {
+    background-color: rgb(42, 36, 56);
+}
+QDialogButtonBox QPushButton:default {
+    background-color: rgb(124, 58, 237);
+    color: rgb(255, 255, 255);
+}
+QDialogButtonBox QPushButton:default:hover {
+    background-color: rgb(168, 85, 247);
 }</string>
   </property>
   <widget class="QFrame" name="frame_2">
