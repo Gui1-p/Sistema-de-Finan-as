@@ -4,6 +4,8 @@
 #include <QMainWindow>
 #include "pessoa.h"
 #include "dialogtransacao.h"
+#include "dialogobjetivo.h"
+#include "dialogfundos.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -21,6 +23,8 @@ public:
 
 private slots: // esse private slots é uma espécie de semaphore do mROS
     void AoAdicionarTransacao();
+    void AoAdicionarObjetivo();
+    void AoRegistrarFundo();
 
 private:
     Ui::MainWindow *ui;

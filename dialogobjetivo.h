@@ -2,6 +2,7 @@
 #define DIALOGOBJETIVO_H
 
 #include <QDialog>
+#include "objetivo.h"
 
 namespace Ui {
 class DialogObjetivo;
@@ -14,6 +15,8 @@ class DialogObjetivo : public QDialog
 public:
     explicit DialogObjetivo(QWidget *parent = nullptr);
     ~DialogObjetivo();
+
+    Objetivo CriarObjetivo();
 
 private:
     Ui::DialogObjetivo *ui;

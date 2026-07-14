@@ -12,3 +12,15 @@ DialogObjetivo::~DialogObjetivo()
 {
     delete ui;
 }
+
+Objetivo DialogObjetivo::CriarObjetivo()
+{
+    QDate d = ui->Data->date();
+    return Objetivo(
+        ui->Nome->text().toStdString(),
+        Data(d.day(), d.month(), d.year()),
+        ui->Descricao->toPlainText().toStdString(),
+        ui->ValorAlvo->value(),
+        ui->ValorAtual->value()
+    );
+}

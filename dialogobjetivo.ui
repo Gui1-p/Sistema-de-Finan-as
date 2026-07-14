@@ -14,7 +14,12 @@
    <string>Dialog</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">QFrame {
+   <string notr="true">QDialog{
+	
+	background-color: rgb(22, 19, 31);
+}
+
+QFrame {
     background-color: #12101c;
     border: 1px solid #2a2438;
     border-radius: 12px;
@@ -136,7 +141,7 @@
     <item>
      <widget class="QLabel" name="label_2">
       <property name="text">
-       <string>Nova meta</string>
+       <string>Novo Objetivo</string>
       </property>
      </widget>
     </item>
@@ -171,15 +176,15 @@
     <string notr="true">background-color: none;</string>
    </property>
    <property name="text">
-    <string>Nome</string>
+    <string>Detalhes</string>
    </property>
   </widget>
   <widget class="QWidget" name="">
    <property name="geometry">
     <rect>
      <x>30</x>
-     <y>350</y>
-     <width>281</width>
+     <y>340</y>
+     <width>350</width>
      <height>67</height>
     </rect>
    </property>
@@ -201,7 +206,11 @@
         </widget>
        </item>
        <item>
-        <widget class="QDoubleSpinBox" name="ValorAtual"/>
+        <widget class="QDoubleSpinBox" name="ValorAtual">
+         <property name="maximum">
+          <double>100000000000000000000.000000000000000</double>
+         </property>
+        </widget>
        </item>
       </layout>
      </widget>
@@ -223,7 +232,11 @@
         </widget>
        </item>
        <item>
-        <widget class="QDoubleSpinBox" name="ValorAlvo"/>
+        <widget class="QDoubleSpinBox" name="ValorAlvo">
+         <property name="maximum">
+          <double>9999999999999999635896294965248.000000000000000</double>
+         </property>
+        </widget>
        </item>
       </layout>
      </widget>
