@@ -2,6 +2,7 @@
 #define DIALOGTRANSACAO_H
 
 #include <QDialog>
+#include "pessoa.h"
 
 namespace Ui {
 class DialogTransacao;
@@ -14,6 +15,9 @@ class DialogTransacao : public QDialog
 public:
     explicit DialogTransacao(QWidget *parent = nullptr);
     ~DialogTransacao();
+
+    void PreencherFundos(vector<Fundos*>& ListaFundos);
+    Transacao CriarTransacao();
 
 private:
     Ui::DialogTransacao *ui;

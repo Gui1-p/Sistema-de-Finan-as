@@ -41,12 +41,18 @@
       <property name="text">
        <string>Entrada</string>
       </property>
+      <property name="checkable">
+       <bool>true</bool>
+      </property>
      </widget>
     </item>
     <item>
      <widget class="QPushButton" name="SaidaSelect">
       <property name="text">
        <string>Saída</string>
+      </property>
+      <property name="checkable">
+       <bool>true</bool>
       </property>
      </widget>
     </item>
@@ -145,7 +151,11 @@
      </widget>
     </item>
     <item>
-     <widget class="QDoubleSpinBox" name="Valor"/>
+     <widget class="QDoubleSpinBox" name="Valor">
+      <property name="maximum">
+       <double>100000000000000004764729344.000000000000000</double>
+      </property>
+     </widget>
     </item>
    </layout>
   </widget>
@@ -192,8 +202,8 @@
     <rect>
      <x>100</x>
      <y>80</y>
-     <width>280</width>
-     <height>60</height>
+     <width>281</width>
+     <height>61</height>
     </rect>
    </property>
    <property name="frameShape">
@@ -202,13 +212,16 @@
    <property name="frameShadow">
     <enum>QFrame::Shadow::Raised</enum>
    </property>
-   <layout class="QVBoxLayout" name="verticalLayout_4">
+   <layout class="QHBoxLayout" name="horizontalLayout_2">
     <item>
      <widget class="QLineEdit" name="Nome">
       <property name="text">
        <string/>
       </property>
      </widget>
+    </item>
+    <item>
+     <widget class="QComboBox" name="Fundo"/>
     </item>
    </layout>
   </widget>
@@ -271,6 +284,22 @@
      </widget>
     </item>
    </layout>
+  </widget>
+  <widget class="QLabel" name="label_9">
+   <property name="geometry">
+    <rect>
+     <x>310</x>
+     <y>60</y>
+     <width>49</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: none;</string>
+   </property>
+   <property name="text">
+    <string>Fundo</string>
+   </property>
   </widget>
  </widget>
  <resources/>

@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include "pessoa.h"
+#include "dialogtransacao.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -17,6 +18,9 @@ class MainWindow : public QMainWindow
 public:
     explicit MainWindow(QWidget *parent = nullptr);
     ~MainWindow() override;
+
+private slots: // esse private slots é uma espécie de semaphore do mROS
+    void AoAdicionarTransacao();
 
 private:
     Ui::MainWindow *ui;

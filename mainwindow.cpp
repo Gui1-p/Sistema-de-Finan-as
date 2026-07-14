@@ -9,6 +9,7 @@ MainWindow::MainWindow(QWidget *parent)
     m_Pessoa = new Pessoa("Guilherme", Data(1, 15, 2006));
     CarregarDadosExemplo();
     AtualizarDashboard();
+    connect(ui->pushButton, &QPushButton::clicked, this, &MainWindow::AoAdicionarTransacao);
 }
 
 MainWindow::~MainWindow()
@@ -41,4 +42,15 @@ void MainWindow::AtualizarDashboard()
     ui->SaldoTotal->setText(QString("R$ %1").arg(m_Pessoa->SaldoTotal(), 0, 'f', 2));
     ui->Entradas->setText(QString("R$ %1").arg(m_Pessoa->Entradas(7, 2026), 0, 'f', 2));
     ui->Saidas->setText(QString("R$ %1").arg(m_Pessoa->Saidas(7, 2026), 0, 'f', 2));
+}
+
+void MainWindow::AoAdicionarTransacao()
+{
+    DialogTransacao dlg(this);
+    dlg.PreencherFundos(m_Pessoa->GetFundos());
+
+    if (dlg.exec() == QDialog::Accepted) {
+        m_Pessoa->AdicionarTransacao(dlg.CriarTransacao());
+        AtualizarDashboard();
+    }
 }
