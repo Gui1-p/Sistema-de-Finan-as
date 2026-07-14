@@ -50,6 +50,8 @@ public:
     void Salvar();
     bool Carregar();
 
+    CartaoCredito* AcharCartao();
+
 
 };
 

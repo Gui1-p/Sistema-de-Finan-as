@@ -34,5 +34,6 @@ private:
     void AtualizarDashboard();
     void AtualizarMetas();
     void AtualizarFundos();
+    void AtualizarCartao();
 };
 #endif // MAINWINDOW_H

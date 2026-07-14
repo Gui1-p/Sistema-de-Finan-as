@@ -196,3 +196,10 @@ bool Pessoa::Carregar()
     arq.close();
     return true;
 }
+
+CartaoCredito* Pessoa::AcharCartao()
+{
+    for (Fundos* f : m_Fundos)
+        if (f->Tipo() == "CartaoCredito") return (CartaoCredito*) f;
+    return nullptr;
+}

@@ -59,7 +59,7 @@
      </widget>
     </item>
     <item>
-     <widget class="QWidget" name="widget" native="true">
+     <widget class="QWidget" name="Dashboard" native="true">
       <property name="sizePolicy">
        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
         <horstretch>0</horstretch>
@@ -67,7 +67,8 @@
        </sizepolicy>
       </property>
       <property name="styleSheet">
-       <string notr="true">QFrame{
+       <string notr="true">
+QFrame{
 	background-color: rgb(22, 19, 31);
 	border-width: 2px;
 	border-radius: 8px;
@@ -75,7 +76,8 @@
 QLabel{
 	color: rgb(213, 206, 241);
 	font: 12pt &quot;&quot;Plus Jakarta Sans&quot;, system-ui, sans-serif;&quot;;
-}</string>
+}
+</string>
       </property>
       <layout class="QGridLayout" name="gridLayout" rowstretch="1,0,6,6,8" columnstretch="3,2,2,2,3" columnminimumwidth="0,0,0,0,0">
        <item row="2" column="3">
@@ -159,11 +161,79 @@ QLabel{
          <property name="frameShadow">
           <enum>QFrame::Shadow::Raised</enum>
          </property>
-         <layout class="QVBoxLayout" name="verticalLayout_7">
+         <layout class="QVBoxLayout" name="verticalLayout_7" stretch="1,6,3,1">
           <item>
            <widget class="QLabel" name="label_8">
             <property name="text">
              <string>Cartão de crédito</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QWidget" name="widget_3" native="true">
+            <property name="styleSheet">
+             <string notr="true">QWidget{
+	background-color: rgb(255, 255, 0);
+	border-width: 2px;
+	border-radius: 8px;
+}</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QWidget" name="widget" native="true">
+            <property name="styleSheet">
+             <string notr="true">background-color: rgb(22, 19, 31);
+border-width: 2px;
+border-radius: 8px;
+</string>
+            </property>
+            <layout class="QVBoxLayout" name="verticalLayout_10">
+             <item>
+              <widget class="QLabel" name="ValorFatura">
+               <property name="text">
+                <string>TextLabel</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QWidget" name="widget_4" native="true">
+               <layout class="QVBoxLayout" name="verticalLayout_12">
+                <item>
+                 <widget class="QProgressBar" name="BarraLimite">
+                  <property name="value">
+                   <number>24</number>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <layout class="QHBoxLayout" name="horizontalLayout">
+                  <item>
+                   <widget class="QLabel" name="LimiteInfo">
+                    <property name="text">
+                     <string>TextLabel</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QLabel" name="Disponivel">
+                    <property name="text">
+                     <string>TextLabel</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </item>
+               </layout>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="Vencimento">
+            <property name="text">
+             <string>TextLabel</string>
             </property>
            </widget>
           </item>
@@ -239,7 +309,15 @@ font: 12px;
            </widget>
           </item>
           <item>
-           <widget class="QWidget" name="FundosRegistrados" native="true"/>
+           <widget class="QWidget" name="FundosRegistrados" native="true">
+            <property name="styleSheet">
+             <string notr="true">QWidget{
+	background-color: rgb(22, 19, 31);
+	border-width: 2px;
+	border-radius: 8px;
+}</string>
+            </property>
+           </widget>
           </item>
          </layout>
         </widget>
@@ -291,7 +369,15 @@ font: 12px;
            </widget>
           </item>
           <item>
-           <widget class="QWidget" name="AreaMetas" native="true"/>
+           <widget class="QWidget" name="AreaMetas" native="true">
+            <property name="styleSheet">
+             <string notr="true">QWidget{
+	background-color: rgb(22, 19, 31);
+	border-width: 2px;
+	border-radius: 8px;
+}</string>
+            </property>
+           </widget>
           </item>
          </layout>
         </widget>

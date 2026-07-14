@@ -29,7 +29,7 @@ public:
     void SetAbertura(Data Abertura);
     void SetValorAplicado(double ValorAplicado);
 
-    double Saldo(vector<Transacao>& Transacoes);
+    virtual double Saldo(vector<Transacao>& Transacoes);
 };
 
 
@@ -46,6 +46,8 @@ public:
     float GetRentabilidade();
 
     string Tipo() override ;
+
+    double Saldo(vector<Transacao>& Transacoes) override;
 
     void SetRentabilidade(float Rentabilidade);
 };
@@ -86,7 +88,9 @@ public:
 
     string Tipo() override ;
 
-    double Fatura();
+    double Fatura(vector<Transacao>& Transacoes);
+    double LimiteDisponivel(vector<Transacao>& Transacoes);
+    double PercentualLimiteUsado(vector<Transacao>& Transacoes);
 
     void SetLimite(double Limite);
 

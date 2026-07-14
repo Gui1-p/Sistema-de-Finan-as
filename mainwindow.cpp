@@ -143,3 +143,23 @@ void MainWindow::AtualizarFundos()
         lay->addWidget(linha);
     }
 }
+
+void MainWindow::AtualizarCartao()
+{
+    CartaoCredito* cartao = m_Pessoa->AcharCartao();
+    if (!cartao) return;                                  // sem cartão cadastrado
+
+    vector<Transacao>& Transacao = m_Pessoa->GetTransacoes();
+    int pct = (int) cartao->PercentualLimiteUsado(Transacao);
+
+    ui->ValorFatura->setText(QString("R$ %1").arg(cartao->Fatura(Transacao), 0, 'f', 2));
+    ui->BarraLimite->setRange(0, 100);
+    ui->BarraLimite->setValue(pct);
+    ui->LimiteInfo->setText(QString("Limite usado · %1%").arg(pct));
+    ui->Disponivel->setText(QString("R$ %1 disponível").arg(cartao->LimiteDisponivel(Transacao), 0, 'f', 2));
+
+    Data v = cartao->GetVencimento();
+    ui->Vencimento->setText(QString("Vence em %1/%2")
+        .arg(v.GetDia(), 2, 10, QChar('0'))
+        .arg(v.GetMes(), 2, 10, QChar('0')));
+}

@@ -37,9 +37,15 @@ Poupanca::Poupanca(string Nome, Data Abertura, double ValorAplicado, float Renta
 //funções
 float Poupanca::GetRentabilidade() {return m_Rentabilidade; }
 
-string Poupanca::Tipo(){return "Poupança";}
+string Poupanca::Tipo(){return "Poupanca";}
 
 void Poupanca::SetRentabilidade(float Rentabilidade) {m_Rentabilidade = Rentabilidade; }
+
+double Poupanca::Saldo(vector<Transacao>& Transacoes)
+{
+    double base = Fundos::Saldo(Transacoes); //se não colocar o fundos:: vira recursividade
+    return base * (1.0 + m_Rentabilidade / 100.0);
+}
 
 
 //construtor
@@ -63,9 +69,17 @@ Data CartaoCredito::GetFechamento() {return m_Fechamento; }
 Data CartaoCredito::GetVencimento() {return m_Vencimento; }
 double CartaoCredito::GetLimite() {return m_Limite; }
 
-string CartaoCredito::Tipo(){return "Cartão de crédito";}
+string CartaoCredito::Tipo(){return "Cartao de credito";}
 
-double CartaoCredito::Fatura() {return -(m_ValorAplicado);}
+double CartaoCredito::Fatura(vector<Transacao>& Transacoes) {return -Saldo(Transacoes);}//isso é para que a fatura não apareça negativa
+
+
+double CartaoCredito::LimiteDisponivel(vector<Transacao>& Transacoes) { return m_Limite - Fatura(Transacoes); }
+double CartaoCredito::PercentualLimiteUsado(vector<Transacao>& Transacoes)
+{
+    if (m_Limite <= 0) return 0;
+    return (Fatura(Transacoes) / m_Limite) * 100.0;
+}
 
 
 void CartaoCredito::SetLimite(double Limite) {m_Limite = Limite;}
