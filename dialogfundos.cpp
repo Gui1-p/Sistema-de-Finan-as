@@ -6,11 +6,16 @@ DialogFundos::DialogFundos(QWidget *parent)
     , ui(new Ui::DialogFundos)
 {
     ui->setupUi(this);
+
+    connect(ui->buttonBox, &QDialogButtonBox::accepted, this, &QDialog::accept);
+    connect(ui->buttonBox, &QDialogButtonBox::rejected, this, &QDialog::reject);
 }
 
 DialogFundos::~DialogFundos()
 {
     delete ui;
+
+
 }
 
 Fundos* DialogFundos::CriarFundo(size_t Id)

@@ -1,5 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include <QProgressBar>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -45,6 +46,8 @@ void MainWindow::AtualizarDashboard()
     ui->SaldoTotal->setText(QString("R$ %1").arg(m_Pessoa->SaldoTotal(), 0, 'f', 2));
     ui->Entradas->setText(QString("R$ %1").arg(m_Pessoa->Entradas(7, 2026), 0, 'f', 2));
     ui->Saidas->setText(QString("R$ %1").arg(m_Pessoa->Saidas(7, 2026), 0, 'f', 2));
+
+    AtualizarMetas();
 }
 
 void MainWindow::AoAdicionarTransacao()
@@ -75,3 +78,33 @@ void MainWindow::AoRegistrarFundo()
         AtualizarDashboard();
     }
 }
+
+void MainWindow::AtualizarMetas()
+{
+    QLayout* lay = ui->AreaMetas->layout();
+
+    //limpa os itens antigos
+    QLayoutItem* item;
+    while ((item = lay->takeAt(0)) != nullptr) {
+        delete item->widget();
+        delete item;
+    }
+
+    for (Objetivo& o : m_Pessoa->GetObjetivos()) {
+        int percentual = 0;
+        if (o.GetValorAlvo() > 0) // evita divisão por zero
+            percentual = (int)((o.GetValorAtual() / o.GetValorAlvo()) * 100);
+        if (percentual > 100) percentual = 100;
+
+        QProgressBar* barra = new QProgressBar();
+        barra->setRange(0, 100);
+        barra->setValue(percentual);
+        barra->setFormat(QString("%1 — R$ %2 / R$ %3  (%p%)")
+            .arg(QString::fromStdString(o.GetNome()))
+            .arg(o.GetValorAtual(), 0, 'f', 2)
+            .arg(o.GetValorAlvo(), 0, 'f', 2));
+        lay->addWidget(barra);
+    }
+
+}
+

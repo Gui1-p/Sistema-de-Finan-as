@@ -44,6 +44,9 @@
       <property name="checkable">
        <bool>true</bool>
       </property>
+      <property name="autoExclusive">
+       <bool>true</bool>
+      </property>
      </widget>
     </item>
     <item>
@@ -52,6 +55,9 @@
        <string>Saída</string>
       </property>
       <property name="checkable">
+       <bool>true</bool>
+      </property>
+      <property name="autoExclusive">
        <bool>true</bool>
       </property>
      </widget>

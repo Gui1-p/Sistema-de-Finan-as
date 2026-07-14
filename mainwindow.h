@@ -32,5 +32,6 @@ private:
 
     void CarregarDadosExemplo();
     void AtualizarDashboard();
+    void AtualizarMetas();
 };
 #endif // MAINWINDOW_H
