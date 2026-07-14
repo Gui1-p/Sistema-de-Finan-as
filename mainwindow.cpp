@@ -14,8 +14,11 @@ MainWindow::MainWindow(QWidget *parent)
 
     m_Pessoa = new Pessoa("Guilherme", Data(15, 1, 2006));
 
-    CarregarDadosExemplo();
+    if (!m_Pessoa->Carregar())   // false = arquivo não existe
+        CarregarDadosExemplo();
+
     AtualizarDashboard();
+
     //são basicamente funções de callback de um subscriber em um node do ROS2
     connect(ui->pushButton, &QPushButton::clicked, this, &MainWindow::AoAdicionarTransacao);
     connect(ui->pushButton_2, &QPushButton::clicked, this, &MainWindow::AoAdicionarObjetivo);
@@ -64,6 +67,7 @@ void MainWindow::AoAdicionarTransacao()
 
     if (dlg.exec() == QDialog::Accepted) {
         m_Pessoa->AdicionarTransacao(dlg.CriarTransacao());
+        m_Pessoa->Salvar();
         AtualizarDashboard();
     }
 }
@@ -73,6 +77,7 @@ void MainWindow::AoAdicionarObjetivo()
     DialogObjetivo dlg(this);
     if (dlg.exec() == QDialog::Accepted) {
         m_Pessoa->AdicionarObjetivo(dlg.CriarObjetivo());
+        m_Pessoa->Salvar();
         AtualizarDashboard();
     }
 }
@@ -82,6 +87,7 @@ void MainWindow::AoRegistrarFundo()
     DialogFundos dialog(this);
     if (dialog.exec() == QDialog::Accepted) {
         m_Pessoa->AdicionarFundo(dialog.CriarFundo(m_Pessoa->GerarId()));
+        m_Pessoa->Salvar();
         AtualizarDashboard();
     }
 }

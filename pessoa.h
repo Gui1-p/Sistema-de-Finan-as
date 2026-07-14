@@ -47,6 +47,9 @@ public:
     double Entradas(size_t Mes, size_t Ano);
     double Saidas(size_t Mes, size_t Ano);
 
+    void Salvar();
+    bool Carregar();
+
 
 };
 
