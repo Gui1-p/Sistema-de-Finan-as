@@ -179,12 +179,12 @@ QFrame {
     <string>Detalhes</string>
    </property>
   </widget>
-  <widget class="QWidget" name="">
+  <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
      <x>30</x>
      <y>340</y>
-     <width>350</width>
+     <width>280</width>
      <height>67</height>
     </rect>
    </property>

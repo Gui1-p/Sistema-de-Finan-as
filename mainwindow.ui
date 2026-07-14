@@ -230,13 +230,16 @@ font: 12px;
          <property name="frameShadow">
           <enum>QFrame::Shadow::Raised</enum>
          </property>
-         <layout class="QVBoxLayout" name="verticalLayout_9">
+         <layout class="QVBoxLayout" name="verticalLayout_9" stretch="1,9">
           <item>
            <widget class="QLabel" name="label_10">
             <property name="text">
              <string>Aplicações Financeiras</string>
             </property>
            </widget>
+          </item>
+          <item>
+           <widget class="QWidget" name="FundosRegistrados" native="true"/>
           </item>
          </layout>
         </widget>
@@ -279,7 +282,7 @@ font: 12px;
          <property name="frameShadow">
           <enum>QFrame::Shadow::Raised</enum>
          </property>
-         <layout class="QVBoxLayout" name="verticalLayout_8" stretch="1,5">
+         <layout class="QVBoxLayout" name="verticalLayout_8" stretch="1,8">
           <item>
            <widget class="QLabel" name="label_11">
             <property name="text">

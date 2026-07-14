@@ -1,13 +1,19 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include <QProgressBar>
+#include <QLabel>
+#include <QVBoxLayout>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    m_Pessoa = new Pessoa("Guilherme", Data(1, 15, 2006));
+    ui->AreaMetas->setLayout(new QVBoxLayout(ui->AreaMetas));
+    ui->FundosRegistrados->setLayout(new QVBoxLayout(ui->FundosRegistrados));
+
+    m_Pessoa = new Pessoa("Guilherme", Data(15, 1, 2006));
+
     CarregarDadosExemplo();
     AtualizarDashboard();
     //são basicamente funções de callback de um subscriber em um node do ROS2
@@ -48,6 +54,7 @@ void MainWindow::AtualizarDashboard()
     ui->Saidas->setText(QString("R$ %1").arg(m_Pessoa->Saidas(7, 2026), 0, 'f', 2));
 
     AtualizarMetas();
+    AtualizarFundos();
 }
 
 void MainWindow::AoAdicionarTransacao()
@@ -108,3 +115,25 @@ void MainWindow::AtualizarMetas()
 
 }
 
+void MainWindow::AtualizarFundos()
+{
+    QLayout* lay = ui->FundosRegistrados->layout();
+    if (!lay) return;
+
+    // limpa os itens antigos
+    QLayoutItem* item;
+    while ((item = lay->takeAt(0)) != nullptr) {
+        delete item->widget();
+        delete item;
+    }
+
+    for (Fundos* f : m_Pessoa->GetFundos()) {
+        double saldo = f->Saldo(m_Pessoa->GetTransacoes());
+
+        QLabel* linha = new QLabel(QString("[%1] %2        R$ %3")
+            .arg(QString::fromStdString(f->Tipo()))
+            .arg(QString::fromStdString(f->GetNome()))
+            .arg(saldo, 0, 'f', 2));
+        lay->addWidget(linha);
+    }
+}

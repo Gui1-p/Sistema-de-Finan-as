@@ -14,6 +14,7 @@ void Fundos::SetNome(string Nome) {m_Nome = Nome; }
 void Fundos::SetAbertura(Data Abertura) {m_Abertura = Abertura; }
 void Fundos::SetValorAplicado(double ValorAplicado) {m_ValorAplicado = ValorAplicado; }
 
+string Fundos::Tipo(){return "Fundo";}
 
 double Fundos::Saldo(vector<Transacao>& Transacoes)
 {
@@ -36,6 +37,8 @@ Poupanca::Poupanca(string Nome, Data Abertura, double ValorAplicado, float Renta
 //funções
 float Poupanca::GetRentabilidade() {return m_Rentabilidade; }
 
+string Poupanca::Tipo(){return "Poupança";}
+
 void Poupanca::SetRentabilidade(float Rentabilidade) {m_Rentabilidade = Rentabilidade; }
 
 
@@ -47,6 +50,8 @@ Investimento::Investimento(string Nome, Data Abertura, double ValorAplicado, flo
 Data Investimento::GetTermino() {return m_Termino; }
 void Investimento::SetTermino(Data Termino) {m_Termino = Termino; }
 
+string Investimento::Tipo(){return "Investimento";}
+
 //construtor
 CartaoCredito::CartaoCredito(string Nome, Data Abertura, double ValorAplicado, Data Fechamento, Data Vencimento, size_t Id, double Limite) :
     Fundos(Nome, Abertura, ValorAplicado, Id), m_Fechamento(Fechamento), m_Vencimento(Vencimento), m_Limite(Limite) {};
@@ -57,6 +62,8 @@ CartaoCredito::CartaoCredito(string Nome, Data Abertura, double ValorAplicado, D
 Data CartaoCredito::GetFechamento() {return m_Fechamento; }
 Data CartaoCredito::GetVencimento() {return m_Vencimento; }
 double CartaoCredito::GetLimite() {return m_Limite; }
+
+string CartaoCredito::Tipo(){return "Cartão de crédito";}
 
 double CartaoCredito::Fatura() {return -(m_ValorAplicado);}
 

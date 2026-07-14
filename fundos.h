@@ -23,6 +23,8 @@ public:
     double GetValorAplicado();
     size_t GetId();
 
+    virtual string Tipo();
+
     void SetNome(string Nome);
     void SetAbertura(Data Abertura);
     void SetValorAplicado(double ValorAplicado);
@@ -43,6 +45,8 @@ public:
 
     float GetRentabilidade();
 
+    string Tipo() override ;
+
     void SetRentabilidade(float Rentabilidade);
 };
 
@@ -56,6 +60,8 @@ private:
 
 public:
     Investimento(string Nome, Data Abertura, double ValorAplicado, float Rentabilidade, Data Termino, size_t Id);
+
+    string Tipo() override ;
 
     Data GetTermino();
     void SetTermino(Data Termino);
@@ -77,6 +83,8 @@ public:
     Data GetFechamento();
     Data GetVencimento();
     double GetLimite();
+
+    string Tipo() override ;
 
     double Fatura();
 
